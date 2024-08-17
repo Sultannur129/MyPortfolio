@@ -1,0 +1,13 @@
+﻿
+<li class="nav-item dropdown hidden-caret">
+	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<i class="la la-envelope"></i>
+		<span class="notification">@ViewBag.messageCount</span>
+	</a>
+	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+		<a class="dropdown-item" href="@Url.Action("Inbox","Message")">Gelen Kutusu</a>
+		<a class="dropdown-item" href="#"> @ViewBag.messageCount Yeni Mesaj</a>
+		<div class="dropdown-divider"></div>
+		<a class="dropdown-item" href="@Url.Action("ContactList","Contact")">İletişim Paneli</a>
+	</div>
+</li>

@@ -1,0 +1,40 @@
+﻿@model List<Testimonial>
+<section id="blog" class="s-blog target-section">
+<div class="s-testimonials">
+
+    <div class="overlay"></div>
+
+    <div class="row testimonials-header">
+        <div class="col-full">
+            <h1 class="h02">Referanslarım</h1>
+        </div>
+    </div>
+
+    <div class="row testimonials">
+
+        <div class="col-full testimonials__slider">
+
+                @foreach(var item in Model)
+                {
+                    <div class="testimonials__slide">
+                        
+                        <!--<p>
+                            Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam accusantium ipsum.
+                            Laudantium quia consequatur molestias delectus culpa facere hic dolores aperiam. Accusantium quos qui praesentium corpori.
+                        </p>-->
+                        <div class="testimonials__author h06">
+                            @item.NameSurname
+                            <span>@item.Title</span>
+                        </div>
+                    </div>
+                    
+                }
+            
+
+        </div> <!-- end testimonials__slider -->
+
+    </div> <!-- end testimonials -->
+
+
+</div>
+</section>

@@ -1,0 +1,63 @@
+﻿@model List<ToDoList> 
+
+ 
+
+<div class="main-header">
+	<div class="logo-header">
+		<a href="index.html" class="logo">
+			Admin Paneli
+		</a>
+		<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<button class="topbar-toggler more"><i class="la la-ellipsis-v"></i></button>
+	</div>
+	<nav class="navbar navbar-header navbar-expand-lg">
+		<div class="container-fluid">
+
+			
+			<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+				@await Component.InvokeAsync("_LayoutNavbarMessageComponentPartial")
+				
+				<li class="nav-item dropdown hidden-caret">
+
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="la la-bell"></i>
+						<span class="notification">@ViewBag.toDoListCount</span>
+					</a>
+					<ul class="dropdown-menu notif-box" aria-labelledby="navbarDropdown">
+						<li>
+							<div class="dropdown-title">@ViewBag.toDoListCount Yeni Bildiriminiz Var.</div>
+						</li>
+						<li>
+							<div class="notif-center">
+								
+								@foreach(var item in Model)
+								{
+									<a href="@Url.Action("Index","ToDoList")">
+										<div class="notif-icon notif-success"> <i class="@item.ImageUrl"></i> </div>
+										<div class="notif-content">
+											<span class="block">
+												@item.Title
+											</span>
+											<span class="time">@item.Date.ToShortDateString()</span>
+										</div>
+									</a>
+									
+								}
+								
+								
+								
+							</div>
+						</li>
+						<li>
+							<a class="see-all" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="la la-angle-right"></i> </a>
+						</li>
+					</ul>
+				</li>
+				@await Component.InvokeAsync("_LayoutNavbarProfilComponentPartial")
+				
+			</ul>
+		</div>
+	</nav>
+</div>

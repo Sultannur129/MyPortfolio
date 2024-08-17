@@ -1,0 +1,68 @@
+﻿@model Contact
+@{
+	ViewData["Title"] = "ContactList";
+	Layout = "~/Views/Layout/Index.cshtml";
+	int count = 1;
+}
+
+<div class="content">
+	<div class="container-fluid">
+		<h4 class="page-title">İletişim</h4>
+		<div class="row">
+			<div class="col-md-15">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">İletişim Bilgileri</div>
+					</div>
+					<div class="card-body">
+						<div class="card-sub">
+							İletişim ile ilgili düzenlemeleri aşağıdaki panelden yapabilirsiniz :
+						</div>
+						<table class="table mt-3">
+							<thead>
+								<tr>
+
+									<th scope="col">#</th>
+									<th scope="col">Linkedin Linki</th>
+									<th scope="col">Github Linki</th>
+									<th scope="col">Telefon 1</th>
+									<th scope="col">Telefon 2</th>
+									<th scope="col">Email 1</th>
+									<th scope="col">Email 2</th>
+									<th scope="col">Adres</th>
+									<th scope="col">Güncelle</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								    
+								
+									<tr>
+										<td>@count</td>
+										<td>@ViewBag.linkedin</td>
+									    <td>@ViewBag.github</td>
+									    <td>@ViewBag.phone1</td>
+									    <td>@ViewBag.phone2</td>
+									    <td>@ViewBag.email1</td>
+									    <td>@ViewBag.email2</td>
+									    <td>@ViewBag.address</td>
+										
+										
+										<td> <a href="/Contact/UpdateContact/@ViewBag.Id" class="btn btn-success">Güncelle</a> </td>
+									</tr>
+
+								
+
+							</tbody>
+						</table>
+						
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+

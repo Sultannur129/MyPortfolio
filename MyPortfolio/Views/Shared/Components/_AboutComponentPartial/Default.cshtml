@@ -1,0 +1,39 @@
+﻿
+<section id="about" class="s-about target-section">
+
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full text-center">
+            <h3>Hakkımda</h3>
+            <h1>@ViewBag.aboutTitle</h1>
+            <p class="lead"> @ViewBag.aboutSubDescription    @*Merhaba ben Sultannur KAYA. Sakarya'da yaşıyorum. 2001 yılında doğdum. Kocaeli Üniversitesi Mühendislik Fakültesi Bilgisayar Mühendisliği bölümünü 3.44/4.0 GPA ile Haziran 2024 tarihinde başarıyla tamamladım. Bu başarımın ardındaki en büyük motivasyon kaynağım ailemin desteği ve her zaman yeni teknolojilere olan ilgim önemli ölçüde etkilemiştir. Ne demişler "İnanmak başarmanın yarısıdır."*@</p>
+        </div>
+    </div>
+
+    <div class="row about-content">
+
+        <div class="col-six tab-full left">
+            <h3>Hakkımda Daha Fazlası</h3>
+
+            <p>@ViewBag.aboutDetail</p>
+
+            
+        </div>
+
+        @await Component.InvokeAsync("_SkillComponentPartial")
+
+        <!-- end about-content -->
+
+    <div class="row about-content about-content--buttons">
+
+        <div class="col-six tab-full left">
+                <a href="~/hola-master/images/SULTANNUR KAYA (last)(UPDATED).pdf" download="CV.pdf" class="btn btn--primary full-width">CV'mi İndir</a>
+        </div>
+        <div class="col-six tab-full right">
+                <a href="#contact" class="scroll-link smoothscroll btn full-width">Bana Yazın</a>
+        </div>
+
+    </div> <!-- end about-content buttons -->
+        <!-- end about-content timeline btn full-width   -->
+     @await Component.InvokeAsync("_ExperienceComponentPartial")
+
+</section>
